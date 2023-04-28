@@ -1,0 +1,15 @@
+<h3>TASK LIST</h3>
+
+<div *ngFor="let i of todolist; let idx = index">
+  <div class="mainbox" *ngIf="i.completed === false">
+    <div class="description">{{ i.description }}</div>
+    <div class="priority">{{ i.priority }}</div>
+    <div class="duedate">{{ i.due }}</div>
+    <br />
+    <div class="buttondiv">
+      <button (click)="markcompleted(idx)">Completed</button>
+      <button (click)="edititem(idx)">Edit</button>
+      <button (click)="deletetodo(idx)">Delete</button>
+    </div>
+  </div>
+</div>

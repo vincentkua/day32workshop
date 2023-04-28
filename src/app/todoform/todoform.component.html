@@ -1,0 +1,28 @@
+<h3>TO DO</h3>
+
+<p style="color: gray;">selected todo = {{selectedtodo | json}}</p>
+
+<form [formGroup]="todoForm" (ngSubmit)="processform()">
+  <table>
+    <tr>
+      <td>Description:</td>
+      <td><input type="text" formControlName="description" style="width: 260px;"/></td>
+    </tr>
+    <tr>
+      <td>Priority:</td>
+      <td>
+        High <input type="radio" formControlName="priority" value="High" /> 
+        Medium <input type="radio" formControlName="priority" value="Medium" /> 
+        Low <input type="radio" formControlName="priority" value="Low" />
+      </td>
+    </tr>
+    <tr>
+      <td>Due:</td>
+      <td><input type="date" formControlName="due" style="width: 260px;"/> <span *ngIf="isDueDateValid()" style="color: red;"> Due Date Must Be a Future Date</span></td>
+    </tr>
+    <br>
+    <button type="submit" [disabled]="isFormValid()" *ngIf="selectedtodo==null">Add</button>
+    <button type="submit" [disabled]="isFormValid()" *ngIf="selectedtodo!=null">Update</button>
+  </table>
+
+</form>

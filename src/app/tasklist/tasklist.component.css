@@ -1,0 +1,30 @@
+.mainbox{
+    border: 1px solid black;
+    width: 350px;
+    height: 75px;
+    padding: 5px;
+    margin-top: 4px;
+
+}
+
+.description{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 4px 0;
+}
+
+.priority{
+    float: left;
+}
+
+.duedate{
+    float: right;
+}
+
+.buttondiv{
+    padding-top: 5px;
+}
+
+.buttondiv>button{
+    margin-right: 10px;
+}
